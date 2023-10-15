@@ -1,0 +1,568 @@
+from django.db import models
+from app.core.helpers.utils import *
+
+
+class AccountingSalary(models.Model):
+    class Meta:
+        db_table = "luong_hoach_toan_tb"
+
+    luong_hoach_toan_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_thang = models.CharField(max_length=100)
+    luong_thu_viec = models.CharField(max_length=100)
+    luong_dao_tao_nghe = models.CharField(max_length=100)
+    luong_cong_thuc = models.CharField(max_length=100)
+    luong_dong_bhxh = models.CharField(max_length=100)
+    bhyt = models.CharField(max_length=100)
+    bhxh = models.CharField(max_length=100)
+    bhtn = models.CharField(max_length=100)
+    kinh_phi_cd = models.CharField(max_length=100)
+    giam_tru_gia_canh = models.CharField(max_length=100)
+    sl_nguoi_phu_thuoc = models.CharField(max_length=100)
+    muc_giam_tru_npt = models.CharField(max_length=100)
+    thue_thu_nhap_ca_nhan = models.CharField(max_length=100)
+    bu_tru_khac_sau_thue = models.CharField(max_length=100)
+    truy_thu_hoan_thue_TNCN = models.CharField(max_length=100)
+    truy_thu_BHYT = models.CharField(max_length=100)
+    tam_ung = models.CharField(max_length=100)
+    hoan_ung = models.CharField(max_length=100)
+    luong_thuc_nhan = models.CharField(max_length=100)
+    hinh_thuc_chi_tra = models.CharField(max_length=100)
+    update_time = models.CharField(max_length=50)
+    update_by = models.CharField(max_length=50)
+
+
+class HistorySalaryType(models.Model):
+    class Meta:
+        db_table = "lich_su_loai_luong_tb"
+
+    id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=10)
+    type_salary = models.CharField(max_length=50)
+    update_time = models.DateTimeField(auto_now=True)
+    update_by = models.CharField(max_length=50)
+
+
+class SalaryDh(models.Model):
+    class Meta:
+        db_table = "luong_dh_tb"
+
+    luong_dh_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    luong_ca_vu_tru_ES = models.CharField(max_length=100)
+    luong_ca_vu_ES = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    clps = models.CharField(max_length=100)
+    cl_lap = models.CharField(max_length=100)
+    bao_hanh_chat_luong = models.CharField(max_length=100)
+    do_hai_long_KH = models.CharField(max_length=100)
+    phu_cap = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalaryIndo(models.Model):
+    class Meta:
+        db_table = "luong_indo_tb"
+
+    luong_indo_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_bao_tri = models.CharField(max_length=100)
+    tong_ca_vu_bao_tri = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    phat_cl_phat_sinh = models.CharField(max_length=100)
+    roi_mang = models.CharField(max_length=100)
+    do_hai_long_KH = models.CharField(max_length=100)
+    ho_tro = models.CharField(max_length=100)
+    tien_gui_xe = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_thu_viec = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalaryABCD(models.Model):
+    class Meta:
+        db_table = "luong_nhom_abcd_tb"
+
+    luong_nhom_abcd_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_kpis = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    cac_khoan_bo_sung = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalaryTF(models.Model):
+    class Meta:
+        db_table = "luong_tf_tb"
+
+    luong_tf_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_tac_vu_TK_BT = models.CharField(max_length=100)
+    tong_tac_vu = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    luong_tac_vu_khac = models.CharField(max_length=100)
+    luong_kpis = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    cl7n = models.CharField(max_length=100)
+    do_hai_long_KH = models.CharField(max_length=100)
+    roi_mang = models.CharField(max_length=100)
+    ho_tro_dia_ban = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalaryTKBT(models.Model):
+    class Meta:
+        db_table = "luong_tk_bt_tb"
+
+    luong_tk_bt_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_tac_vu_TK_BT = models.CharField(max_length=100)
+    tong_tac_vu = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    luong_tac_vu_khac = models.CharField(max_length=100)
+    luong_kpis = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    cl7n = models.CharField(max_length=100)
+    nha_tuyen = models.CharField(max_length=100)
+    roi_mang = models.CharField(max_length=100)
+    do_hai_long_KH = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+    luong_don_tru = models.CharField(max_length=100)
+    luong_bac_nghe = models.CharField(max_length=100)
+    he_so_tang_cuong = models.CharField(max_length=100)
+    so_pttb = models.CharField(max_length=100)
+    doanh_thu = models.CharField(max_length=100)
+    bt_kh_goi_cuoc_lon = models.CharField(max_length=100)
+    thuong_tk_bt_nhanh = models.CharField(max_length=100)
+    tra_ca_sai_hen = models.CharField(max_length=100)
+    thuong_cl7n_30n = models.CharField(max_length=100)
+    ghi_chu = models.CharField(max_length=1000)
+
+
+class SalaryFee(models.Model):
+    class Meta:
+        db_table = "luong_thu_cuoc_tb"
+
+    luong_thu_cuoc_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    ty_le_thu_hoi = models.CharField(max_length=100)
+    thuc_thu = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_theo_gia_tri_tien_thu = models.CharField(max_length=100)
+    luong_co_dinh = models.CharField(max_length=100)
+    thuong_phat = models.CharField(max_length=100)
+    chi_tieu = models.CharField(max_length=100)
+    thuong_phat_chi_tieu = models.CharField(max_length=100)
+    thuong_muc_3 = models.CharField(max_length=100)
+    phat_khong_dat_chi_tieu = models.CharField(max_length=100)
+    thanh_toan_online = models.CharField(max_length=100)
+    roi_mang = models.CharField(max_length=100)
+    kpis_chi_nhanh = models.CharField(max_length=100)
+    thi_phan_bac = models.CharField(max_length=100)
+    luong_recare = models.CharField(max_length=100)
+    recare_tu_thu = models.CharField(max_length=100)
+    recare_thu_ho = models.CharField(max_length=100)
+    luong_recare_dao_han_ra_cuoc = models.CharField(max_length=100)
+    luong_thu_hoi_bill_bi_dong_ngay_20 = models.CharField(max_length=100)
+    luong_kpdv = models.CharField(max_length=100)
+    thu_lao_thu_hoi_thiet_bi = models.CharField(max_length=100)
+    luong_thu_hoi_bill_cnqh = models.CharField(max_length=100)
+    luong_theo_chinh_sach = models.CharField(max_length=100)
+    luong_bk1_add_bill_tra_truoc_ngoai_cs = models.CharField(max_length=100)
+    kick_off = models.CharField(max_length=100)
+    cs_thu_hoi_bi_dong_dich_chuyen_httt_v5_t02 = models.CharField(max_length=100)
+    ho_tro = models.CharField(max_length=100)
+    nhan_vien_moi = models.CharField(max_length=100)
+    nghi_thai_san = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+
+
+class SalaryFTI(models.Model):
+    class Meta:
+        db_table = "luong_fti_tb"
+
+    luong_fti_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_theo_au = models.CharField(max_length=100)
+    luong_trien_khai = models.CharField(max_length=100)
+    tong_tac_vu = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    luong_tac_vu_khac = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    luong_kpis = models.CharField(max_length=100)
+    phu_cap = models.CharField(max_length=100)
+    truc_su_kien = models.CharField(max_length=100)
+    ho_tro_dia_ban = models.CharField(max_length=100)
+    trach_nhiem = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalaryKeyIndo(models.Model):
+    class Meta:
+        db_table = "luong_key_indo_tb"
+
+    luong_key_indo_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    thuong_nsld = models.CharField(max_length=100)
+    tong_cl_bao_tri = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    nsld_ca_nhan = models.CharField(max_length=100)
+    thuong_chi_tieu_nhom = models.CharField(max_length=100)
+    nsld_nhom = models.CharField(max_length=100)
+    kpis = models.CharField(max_length=100)
+    cl_lap = models.CharField(max_length=100)
+    roi_mang = models.CharField(max_length=100)
+    do_hai_long_KH = models.CharField(max_length=100)
+    ho_tro = models.CharField(max_length=100)
+    tien_gui_xe = models.CharField(max_length=100)
+    dao_tao = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalaryTnOs(models.Model):
+    class Meta:
+        db_table = "luong_tn_os_tb"
+
+    luong_tn_os_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    kpis = models.CharField(max_length=100)
+    cl_lap = models.CharField(max_length=100)
+    roi_mang = models.CharField(max_length=100)
+    do_hai_long_kh = models.CharField(max_length=100)
+    nhan_vien = models.CharField(max_length=100)
+    cldv = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    cac_khoan_bo_sung = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalarySo(models.Model):
+    class Meta:
+        db_table = "luong_so_tb"
+
+    luong_so_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_tac_vu_bt = models.CharField(max_length=100)
+    tong_tac_vu = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    luong_tac_vu_khac = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    kpis = models.CharField(max_length=100)
+    cl7n = models.CharField(max_length=100)
+    kh_roi_mang = models.CharField(max_length=100)
+    do_hai_long_kh = models.CharField(max_length=100)
+    ho_tro_kh_thanh_cong = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+    nha_ca = models.CharField(max_length=100)
+    khong_nhan_ca = models.CharField(max_length=100)
+    thuong_cl7n_30n = models.CharField(max_length=100)
+
+
+class SalaryTest(models.Model):
+    class Meta:
+        db_table = "luong_testTB_tb"
+
+    luong_test_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_tac_vu = models.CharField(max_length=100)
+    tong_tac_vu = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    kpis = models.CharField(max_length=100)
+    do_chinh_xac = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class SalaryDhTin(models.Model):
+    class Meta:
+        db_table = "luong_dh_tin_tb"
+
+    luong_dh_tin_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    bac_dieu_hanh = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    luong_quy_mo_nhan_su = models.CharField(max_length=100)
+    so_ns_quan_ly = models.CharField(max_length=100)
+    luong_hieu_qua_nhan_su = models.CharField(max_length=100)
+    diem_nsld_trung_binh = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    thuong_csat = models.CharField(max_length=100)
+    thuong_cem = models.CharField(max_length=100)
+    thuong_ty_le_clps_7n_sau_tkbt = models.CharField(max_length=100)
+    thuong_giu_chan_kh = models.CharField(max_length=100)
+    thuong_trien_khai_dung_hen = models.CharField(max_length=100)
+    thuong_bao_tri_dung_hen = models.CharField(max_length=100)
+    thuong_bao_tri_dut_diem = models.CharField(max_length=100)
+    phu_cap = models.CharField(max_length=100)
+    thu_nhap_khac = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+    ghi_chu_bu_tru_khac = models.CharField(max_length=100)
+
+
+class SalaryTfTin(models.Model):
+    class Meta:
+        db_table = "luong_tf_tin_tb"
+
+    luong_tf_tin_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_tac_vu_TK_BT = models.CharField(max_length=100)
+    tong_tac_vu = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    thuong_nsld = models.CharField(max_length=100)
+    phu_cap_ngoai_gio_lam_viec = models.CharField(max_length=100)
+    luong_goi_cuoc_cao = models.CharField(max_length=100)
+    luong_tac_vu_khac = models.CharField(max_length=100)
+    luong_kpis = models.CharField(max_length=100)
+    thuong_csat = models.CharField(max_length=100)
+    thuong_cem = models.CharField(max_length=100)
+    thuong_trien_khai_dung_hen = models.CharField(max_length=100)
+    thuong_bao_tri_dung_hen = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    cl7n = models.CharField(max_length=100)
+    nha_tuyen = models.CharField(max_length=100)
+    kh_roi_mang = models.CharField(max_length=100)
+    ty_le_clps_block = models.CharField(max_length=100)
+    phu_cap_di_chuyen = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_nhap_khac = models.CharField(max_length=100)
+    thi_dua = models.CharField(max_length=100)
+    cac_khoan_thu_nhap_khac = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+    ghi_chu_bu_tru_khac = models.CharField(max_length=100)
+
+
+class SalaryTkbtTin(models.Model):
+    class Meta:
+        db_table = "luong_tkbt_tin_tb"
+
+    luong_tkbt_tin_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_nang_suat = models.CharField(max_length=100)
+    ngay_cong_thuc_te = models.CharField(max_length=100)
+    tong_diem_nsld = models.CharField(max_length=100)
+    nsld = models.CharField(max_length=100)
+    thuong_nsld = models.CharField(max_length=100)
+    phu_cap_ngoai_gio_lam_viec = models.CharField(max_length=100)
+    luong_goi_cuoc_cao = models.CharField(max_length=100)
+    luong_tac_vu_khac = models.CharField(max_length=100)
+    luong_kpis = models.CharField(max_length=100)
+    thuong_csat = models.CharField(max_length=100)
+    thuong_cem = models.CharField(max_length=100)
+    thuong_trien_khai_dung_hen = models.CharField(max_length=100)
+    thuong_bao_tri_dung_hen = models.CharField(max_length=100)
+    luong_chat_luong = models.CharField(max_length=100)
+    cl7n = models.CharField(max_length=100)
+    nha_tuyen = models.CharField(max_length=100)
+    kh_roi_mang = models.CharField(max_length=100)
+    ty_le_clps_block = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_nhap_khac = models.CharField(max_length=100)
+    thi_dua = models.CharField(max_length=100)
+    cac_khoan_thu_nhap_khac = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_phu_cap_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+    luong_don_tru = models.CharField(max_length=100)
+    ghi_chu_bu_tru_khac = models.CharField(max_length=100)
+
+
+class SalaryInf(models.Model):
+    class Meta:
+        db_table = "luong_inf_tb"
+
+    luong_inf_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=50)
+    month = models.CharField(max_length=20)
+    luong_cung = models.CharField(max_length=100)
+    ngay_cong = models.CharField(max_length=100)
+    luong_san_pham = models.CharField(max_length=100)
+    luong_vhht = models.CharField(max_length=100)
+    luong_ptht = models.CharField(max_length=100)
+    luong_nang_suat = models.CharField(max_length=100)
+    thanh_tich_dac_biet = models.CharField(max_length=100)
+    phu_cap = models.CharField(max_length=100)
+    container = models.CharField(max_length=100)
+    swap = models.CharField(max_length=100)
+    tien_gui_xe = models.CharField(max_length=100)
+    che_tai = models.CharField(max_length=100)
+    thu_chi_khac = models.CharField(max_length=100)
+    bu_tru_luong_thang_t_1 = models.CharField(max_length=100)
+    khen_thuong = models.CharField(max_length=100)
+    cac_khoan_ho_tro_khac = models.CharField(max_length=100)
+    luong_san_pham_khac = models.CharField(max_length=100)
+    hoa_hong_ban_hang = models.CharField(max_length=100)
+    luong_thu_cuoc_khong_chuyen = models.CharField(max_length=100)
+
+
+class WorkingSchedule(models.Model):
+
+    class Meta:
+        db_table = 'mypt_ho_job_working_schedule'
+
+    id = models.AutoField(primary_key=True)
+    thang_nam = models.CharField(max_length=20)
+    thang = models.IntegerField()
+    vung = models.CharField(max_length=30)
+    chi_nhanh = models.CharField(max_length=30)
+    phong_ban = models.CharField(max_length=30)
+    MNV = models.CharField(max_length=20)
+    ho_va_ten = models.CharField(max_length=200)
+    # email = models.CharField(max_length=50)
+    vi_tri = models.CharField(max_length=50)
+    tu_ngay = models.DateField()
+    den_ngay = models.DateField()
+    account = models.CharField(max_length=30, blank=True, null=True)
+    ghi_chu1 = models.CharField(max_length=200, blank=True, null=True)
+    ghi_chu2 = models.CharField(max_length=200, blank=True, null=True)
+    schedule_info = models.CharField(max_length=10000)
+
