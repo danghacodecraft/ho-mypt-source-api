@@ -1,0 +1,87 @@
+PTQ_TB = {
+    "id":"PTQ ID",
+    "region":"Vùng",
+    "partner":"Chi nhánh",
+    "blockName":"Block",
+    "empName":"Nhân viên",
+    "accountMbn":"Acct",
+    "email":"Email nhân viên",
+    "contract":"SHD",
+    "errorType":"Loại phiếu (PTC-CL)",
+    "dateComplete":"Ngày hoàn tất",
+    "dateCheck":"Ngày kiểm soát",
+    "durationCheck":"Kỳ kiểm soát",
+    "errorMain":"Lỗi chính",
+    "errorGroup":"Nhóm lỗi",
+    "errorDescription":"Mô tả lỗi",
+    "errorDetail":"Chi tiết ghi nhận vi phạm (cột ghi chú trên mobiqc)",
+    "punishment":"Mức chế tài (dự kiến)",
+    "errorNumber":"Số lần vi phạm",
+    "deadline":"Hạn nhận giải trình",
+    "recordedName":"Duyệt giải trình",
+    "recorded":"Trang thai giai trinh",
+    "thematic":"Chuyên đề kiểm soát",
+    "empName":"Tên nhân viên",
+    "explanation":"Giai trinh"
+}
+
+PTQ_TB_EXPORT = {
+    "recordedName":"Kết quả duyệt",
+    "region":"Vùng",
+    "partner":"Chi nhánh",
+    "blockName":"Block",
+    "empName":"Nhân viên",
+    "accountMbn":"Account",
+    "email":"Email nhân viên",
+    "contract":"SHD",
+    "errorType":"Loại phiếu (PTC-CL)",
+    "dateComplete":"Ngày hoàn tất",
+    "durationCheck":"Kỳ kiểm soát",
+    "dateCheck":"Ngày kiểm soát",
+    "errorGroup":"Nhóm lỗi",
+    "errorMain":"Lỗi chính",
+    "errorDescription":"Mô tả lỗi",
+    "errorDetail":"Chi tiết ghi nhận vi phạm",
+    "errorNumber":"Số lần vi phạm",
+    "punishment":"Mức chế tài (dự kiến)",
+    "deadline":"Hạn nhận giải trình",
+    "thematic":"Chuyên đề kiểm soát",
+    "explanation":"Giai trinh"
+}
+
+
+PTQ_IMPORT = {
+    "region":"vùng",
+    "partner":"chinhánh",
+    "blockName":"block",
+    "empName":"nhânviên",
+    "accountMbn":"acct",
+    "email":"emailnhânviên",
+    "contract":"shd",
+    "errorType":"loạiphiếu(ptc-cl)",
+    "dateComplete":"ngàyhoàntất",
+    "dateCheck":"ngàykiểmsoát",
+    "errorMain":"lỗichính",
+    "errorGroup":"nhómlỗi",
+    "errorDescription":"môtảlỗi",
+    "punishment":"mứcchếtài(dựkiến)",
+    "errorNumber":"sốlầnviphạm",
+    "deadline":"hạnnhậngiảitrình",
+    "thematic":"chuyênđềkiểmsoát",
+    "errorDetail":"chitiếtghinhậnviphạm(cộtghichútrênmobiqc)"
+}
+
+TOOLS_TB = {
+    "stockName":"Kho",
+    "email":"Email nhân viên",
+    "itemCode":"Mã hàng",
+    "itemName":"Tên hàng",
+    "sizeName":"Size",
+    "zoneName":"Tình trạng hàng",
+    "quantityNow":"Tồn kho",
+    "quantityHold":"Tồn treo",
+    "startDate":"Ngày cấp phát",
+    "expireDate":"Ngày hết hạn",
+    "name":"Tên nhân viên",
+    "empCode":"Mã NV"
+}
