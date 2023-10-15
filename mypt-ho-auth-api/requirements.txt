@@ -1,0 +1,14 @@
+django
+djangorestframework
+markdown
+django-filter
+pyjwt
+mysqlclient
+pycryptodome
+pycryptodomex
+numpy
+pandas
+redis
+python-decouple
+requests
+django-cors-headers
